@@ -36,17 +36,18 @@
 
 .main_header {
 	width: 100%;
-	margin: 0 auto;
+	margin: -15px 0 auto;
 	background: white;
 	#logo {
 		float: left;
+    color: #397CAC;
 		a {
 			text-transform: uppercase;
 			font-weight: 700;
 			letter-spacing: -1px;
 			font-size: 1.2rem;
 			text-decoration: none;
-			color:#397CAC;
+			color: #397CAC;
 		}
 	}
 	#buttons {
@@ -87,3 +88,21 @@
 		}
 	}
 }
+
+#post_content {
+	background: white;
+	padding: 2em 5%;
+	border-radius: .5em;
+	h1 {
+		font-weight: 100;
+		font-size: 2em;
+		color: #397CAC;
+		margin-top: 0;
+	}
+	p {
+		color: #B2BAC2;
+		font-size: 0.9rem;
+		font-weight: 100;
+		line-height: 1.5;
+	 }
+	}

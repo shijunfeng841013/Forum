@@ -4,7 +4,7 @@
   %title John Shi's Rails Forum
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
   %link{href:"https://fonts.googleapis.com/css?family=Lato:300,400,700", rel:"stylesheet",}
-  %link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css.map"} 
+  %link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css.map"}
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   = csrf_meta_tags
 
@@ -14,7 +14,12 @@
       #logo
         %p John Shi's Rails Forum
       #buttons
-        = link_to "New Post", new_post_path
+        - if user_signed_in?
+          = link_to "New Post", new_post_path
+          = link_to "Sign Out", destroy_user_session_path, method: :delete
+        - else
+          = link_to "Sign UP", new_user_registration_path
+          = link_to "Sign In", new_user_session_path
 
   .wrapper
     %p.notice= notice
